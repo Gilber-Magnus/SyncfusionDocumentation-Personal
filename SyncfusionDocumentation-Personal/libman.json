@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "@syncfusion/blazor-themes@23.1.42",
+      "destination": "wwwroot/themes/syncfusion/blazor-themes/",
+      "files": [
+        "SCSS-Themes/material-dark.scss",
+        "LICENSE",
+        "package.json",
+        "README.md"
+      ]
+    }
+  ]
+}
