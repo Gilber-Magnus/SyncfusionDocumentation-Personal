@@ -2,5 +2,12 @@
   {
     "outputFile": "wwwroot/themes/syncfusion/blazor-themes/SCSS-Themes/material-dark.css",
     "inputFile": "wwwroot/themes/syncfusion/blazor-themes/SCSS-Themes/material-dark.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/custom.css",
+    "inputFile": "wwwroot/styles/custom.scss",
+    "options": {
+      "loadPaths": "node_modules/@syncfusion"
+    }
   }
 ]
