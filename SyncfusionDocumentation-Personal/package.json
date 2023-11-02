@@ -3,7 +3,6 @@
   "name": "asp.net",
   "private": true,
   "devDependencies": {
-    "gulp": "4.0.2",
-    "@types/jquery": "3.5.3"
+    "@syncfusion/blazor-themes": "23.1.42"
   }
 }
