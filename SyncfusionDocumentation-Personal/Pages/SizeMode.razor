@@ -3,19 +3,19 @@
 
 <h3>Size Mode for a control</h3>
 <hr />
-<SfButton @OnClick="To_TouchMode">Touch</SfButton>
-<SfButton @OnClick="To_MouseMode">Click</SfButton>
+<SfButton @onclick="To_TouchMode">Touch</SfButton>
+<SfButton @onclick="To_MouseMode">Click</SfButton>
 
 <hr />
-<div class="e-bigger">
+<div class="@CssClass">
     <SfCalendar TValue="DateTime?" Value="@DateValue"></SfCalendar>
 </div>
 
-<div class="e-bigger">
+<div>
     <SfButton>Button</SfButton>
 </div>
 
-<div class ="e-bigger">
+<div>
     <SfCheckBox Label="checked" @bind-Checked="isChecked"></SfCheckBox>
 </div>
 
