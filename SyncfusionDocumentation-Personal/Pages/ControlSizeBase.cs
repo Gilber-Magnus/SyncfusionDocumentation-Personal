@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.Web;
 
 namespace SyncfusionDocumentation_Personal.Pages
 {
-    public class SizeModeBase : ComponentBase
+    public class ControlSizeBase : ComponentBase
     {
         protected bool isChecked = true;
         protected DateTime? DateValue { get; set; } = new DateTime(2023, 11, 08);
