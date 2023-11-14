@@ -9,13 +9,13 @@ namespace SyncfusionDocumentation_Personal.Pages
         protected DateTime? DateValue { get; set; } = new DateTime(2023, 11, 08);
 
         //protected string ButtonText { get; set; } = "e-bigger";
-        protected string CssClass { get; set; } = null; 
+        protected string CssClass { get; set; } = null;
 
-        protected void To_TouchMode(MouseEventArgs e)
+        protected void To_TouchMode()
         {
             CssClass = "e-bigger";
         }
-        protected void To_MouseMode(MouseEventArgs e)
+        protected void To_MouseMode()
         {
             CssClass = null;
         }
