@@ -1,6 +1,8 @@
 ﻿@page "/appsizemode"
 @inherits AppSizeBase
 
-@code {
 
-}
+<SfButton @onclick="callOnMouse">Mouse</SfButton>
+<SfButton @onclick="callOnTouch">Touch</SfButton>
+
+<SfCalendar TValue="DateTime?" Value="@DateValue"></SfCalendar>

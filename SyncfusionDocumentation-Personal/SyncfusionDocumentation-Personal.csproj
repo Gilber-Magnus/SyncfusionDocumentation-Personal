@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
-    <Content Remove="Pages\AppSize.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +17,6 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
-    <None Include="Pages\AppSize.razor" />
   </ItemGroup>
 
   <ItemGroup>
