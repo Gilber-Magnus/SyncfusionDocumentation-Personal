@@ -1,0 +1,21 @@
+﻿@page "/sfgridresponsivecol"
+@inherits SfGridResponsivenessBase
+<h3>SfGridResponsiveCol</h3>
+
+<SfGrid DataSource="@Orders" Height="315">
+    <GridColumns>
+        <GridColumn Field=@nameof(OrderData.OrderID) HeaderText="Order ID" HideAtMedia="(min-width: 700px)" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+        <GridColumn Field=@nameof(OrderData.CustomerID) HeaderText="Customer Name" HideAtMedia="(max-width: 500px)" Width="150" TextAlign="TextAlign.Center"></GridColumn>
+        <GridColumn Field=@nameof(OrderData.OrderDate) HeaderText="Order Date" Format="d" Type="ColumnType.Date" TextAlign="TextAlign.Center" Width="130"></GridColumn>
+        <GridColumn Field=@nameof(OrderData.Freight) HeaderText="Freight" Format="C2" HideAtMedia="(min-width: 500px)" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+    </GridColumns>
+</SfGrid>
+@code {
+   private SfGrid<OrderData> Grid;
+    public List<OrderData> Orders { get; set; }
+       
+    protected override void OnInitialized()
+    {
+        Orders = OrderData.GetAllRecords();
+    }     
+}
