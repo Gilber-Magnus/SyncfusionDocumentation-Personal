@@ -26,6 +26,7 @@
     <PackageReference Include="Syncfusion.Blazor.Core" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.Grid" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.Inputs" Version="23.1.42" />
+    <PackageReference Include="Syncfusion.Blazor.Layouts" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.Lists" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.Popups" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="23.1.42" />
