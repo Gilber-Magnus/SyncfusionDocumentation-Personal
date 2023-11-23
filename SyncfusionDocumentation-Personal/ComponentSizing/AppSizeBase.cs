@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 
-namespace SyncfusionDocumentation_Personal.Pages
+namespace SyncfusionDocumentation_Personal.ComponentSizing
 {
     public class AppSizeBase : ComponentBase
     {

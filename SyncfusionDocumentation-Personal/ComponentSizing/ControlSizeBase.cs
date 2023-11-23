@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
-namespace SyncfusionDocumentation_Personal.Pages
+namespace SyncfusionDocumentation_Personal.ComponentSizing
 {
     public class ControlSizeBase : ComponentBase
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace SyncfusionDocumentation_Personal.Pages
+namespace SyncfusionDocumentation_Personal.Responsiveness
 {
     public class ToolBarResponsivenessBase : ComponentBase
     {
