@@ -34,8 +34,4 @@
     <PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="23.1.42" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>
