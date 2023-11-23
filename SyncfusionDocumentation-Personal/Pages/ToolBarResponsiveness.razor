@@ -1,6 +1,119 @@
 ﻿@page "/toolbarresponsiveness"
 @inherits ToolBarResponsivenessBase
-<h3>ToolBarResponsiveness</h3>
+<h1>ToolBar Responsiveness</h1>
+<hr />
+<h3>Scrollable version of responsiveness (Default)</h3>
+
+<SfToolbar Width="600">
+    <ToolbarItems>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-cut" Text="Cut"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-copy" Text="Copy"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paste" Text="Paste"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-bold" Text="Bold"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-underline" Text="Underline"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-italic" Text="Italic"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paint-bucket" Text="Color-Picker"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-list-unordered" Text="Bullets"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-list-ordered" Text="Numbering"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-sort-ascending" Text="Sort A - Z"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-sort-descending" Text="Sort Z - A"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-upload-1" Text="Upload"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-download" Text="Download"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-increase-indent" Text="Text Indent"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-decrease-indent" Text="Text Outdent"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-erase" Text="Clear"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-refresh" Text="Reload"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-export" Text="Export"></ToolbarItem>
+    </ToolbarItems>
+</SfToolbar>
+
+<hr />
+<h3>OverFlowMode.Popup responsiveness</h3>
+
+<SfToolbar Width="380" OverflowMode="OverflowMode.Popup">
+    <ToolbarItems>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-cut" Text="Cut"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-copy" Text="Copy"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paste" Text="Paste"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-bold" Text="Bold"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-underline" Text="Underline"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-italic" Text="Italic"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paint-bucket" Text="Color-Picker"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-erase" Text="Clear"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-refresh" Text="Reload"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-export" Text="Export"></ToolbarItem>
+    </ToolbarItems>
+</SfToolbar>
+
+<h3>showtexton and overflow properties</h3>
+
+<SfToolbar Width="300" OverflowMode="OverflowMode.Popup">
+    <ToolbarItems>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-cut" Text="Cut" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-copy" Text="Copy" ShowTextOn="DisplayMode.Toolbar" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paste" Text="Paste" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-bold" Text="Bold" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-underline" Text="Underline" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-italic" Text="Italic" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paint-bucket" Text="Color-Picker" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-erase" Text="Clear" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-refresh" Text="Reload" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-export" Text="Export" ShowTextOn="DisplayMode.Overflow" Overflow="OverflowOption.Show"></ToolbarItem>
+    </ToolbarItems>
+</SfToolbar>
+
+<hr />
+
+<h3>OverFlowMode.MultiRow responsiveness</h3>
+<SfToolbar Width="380" OverflowMode="OverflowMode.MultiRow">
+    <ToolbarItems>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-cut" Text="Cut"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-copy" Text="Copy"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paste" Text="Paste"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-bold" Text="Bold"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-underline" Text="Underline"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-italic" Text="Italic"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paint-bucket" Text="Color-Picker"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-erase" Text="Clear"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-refresh" Text="Reload"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-export" Text="Export"></ToolbarItem>
+    </ToolbarItems>
+</SfToolbar>
+
+<hr />
+
+<h3>OverFlowMode.Extended responsiveness</h3>
+<SfToolbar Width="380" OverflowMode="OverflowMode.Extended">
+    <ToolbarItems>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-cut" Text="Cut"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-copy" Text="Copy"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paste" Text="Paste"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-bold" Text="Bold"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-underline" Text="Underline"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-italic" Text="Italic"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-paint-bucket" Text="Color-Picker"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Separator"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-erase" Text="Clear"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-refresh" Text="Reload"></ToolbarItem>
+        <ToolbarItem Type="ItemType.Button" PrefixIcon="e-icons e-export" Text="Export"></ToolbarItem>
+    </ToolbarItems>
+</SfToolbar>
+
+
+
 
 @code {
 
