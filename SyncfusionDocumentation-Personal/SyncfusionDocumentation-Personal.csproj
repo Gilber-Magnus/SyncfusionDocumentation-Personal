@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -9,17 +9,17 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
-    <Content Remove="DataBinding\ObservableColINotifyProp.razor" />
+    <Content Remove="DataBinding\Component.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="compilerconfig.json" />
-    <_ContentIncludedByDefault Remove="DataBinding\ObservableColINotifyProp.razor" />
+    <_ContentIncludedByDefault Remove="DataBinding\Component.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
-    <None Include="DataBinding\ObservableColINotifyProp.razor" />
+    <None Include="DataBinding\Component.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="DataBinding\ObservableColINotifyProp.razor" />
+    <UpToDateCheckInput Remove="DataBinding\Component.razor" />
   </ItemGroup>
 
 </Project>
