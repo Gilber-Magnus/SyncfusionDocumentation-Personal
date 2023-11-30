@@ -9,14 +9,17 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="DataBinding\ObservableColINotifyProp.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="compilerconfig.json" />
+    <_ContentIncludedByDefault Remove="DataBinding\ObservableColINotifyProp.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
+    <None Include="DataBinding\ObservableColINotifyProp.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +35,10 @@
     <PackageReference Include="Syncfusion.Blazor.Popups" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="23.1.42" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="DataBinding\ObservableColINotifyProp.razor" />
   </ItemGroup>
 
 </Project>
