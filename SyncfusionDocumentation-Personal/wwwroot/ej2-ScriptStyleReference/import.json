@@ -1,0 +1,40 @@
+{
+    "name": "CRG-StyleScript",
+    "version": "23.2.6",
+    "components": [
+        "calendar",
+        "card",
+        "button",
+        "appbar",
+        "schedule"
+    ],
+    "injectables": {
+        "calendar": [
+            "Islamic"
+        ],
+        "schedule": [
+            "Day",
+            "Week",
+            "WorkWeek",
+            "Month",
+            "Year",
+            "Agenda",
+            "MonthAgenda",
+            "TimelineViews",
+            "TimelineMonth",
+            "TimelineYear",
+            "Resize",
+            "DragAndDrop",
+            "ExcelExport",
+            "ICalendarExport",
+            "ICalendarImport",
+            "Print"
+        ]
+    },
+    "minified": true,
+    "themes": [
+        "material",
+        "bootstrap5"
+    ],
+    "userMailId": "mutaigilly02@gmail.com"
+}

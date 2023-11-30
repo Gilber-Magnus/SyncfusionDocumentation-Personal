@@ -68,6 +68,16 @@
 <SfIcon IconCss="oi oi-clock"></SfIcon>
 <SfIcon IconCss="oi oi-audio"></SfIcon>
 <SfIcon IconCss="oi oi-bluetooth"></SfIcon>
-@code {
 
+<hr />
+<h3>Custom Html Attribute</h3>
+<SfIcon Name="IconName.Copy" @attributes="customAttribute"></SfIcon>
+<SfButton IconCss="e-icons e-chevron-down-fill" Content="Show dropdown" IconPosition="IconPosition.Right"></SfButton>
+<span class="e-icons e-search"></span>
+
+@code{
+   Dictionary<string, object> customAttribute = new Dictionary<string, object>()
+   {
+       { "style", "font-size: 20px" }
+   };
 }
