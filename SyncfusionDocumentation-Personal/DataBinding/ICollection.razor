@@ -1,0 +1,23 @@
+﻿@page "/dataupdates"
+@inherits ICollectionBase
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Buttons
+
+<h3>In the following code example, DataGrid automatically updates its data when add, remove items in the ObservableCollection.</h3>
+<hr />
+
+<SfButton ID="add" @onclick="AddRecord">Add Record</SfButton>
+<SfButton ID="del" CssClass="deleteBtn" @onclick="DeleteRecord">Delete Record</SfButton>
+<br />
+<br />
+<SfGrid DataSource="@observableData" AllowPaging="true">
+    <GridEditSettings AllowAdding="true" AllowEditing="true" AllowDeleting="true"></GridEditSettings>
+    <GridColumns>
+        <GridColumn Field=@nameof(DataOrder.OrderID) HeaderText="Order ID" IsPrimaryKey="true" TextAlign="@TextAlign.Center" HeaderTextAlign="@TextAlign.Center" Width="140"></GridColumn>
+        <GridColumn Field=@nameof(DataOrder.CustomerName) HeaderText="Customer Name" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(DataOrder.Freight) HeaderText="Freight" EditType="EditType.NumericEdit" Format="C2" Width="140" TextAlign="@TextAlign.Right" HeaderTextAlign="@TextAlign.Right"></GridColumn>
+        <GridColumn Field=@nameof(DataOrder.OrderDate) HeaderText="Order Date" EditType="EditType.DatePickerEdit" Format="d" TextAlign="TextAlign.Right" Type="ColumnType.Date" Width="160"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
+
