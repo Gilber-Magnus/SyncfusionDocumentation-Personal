@@ -10,5 +10,10 @@ namespace SyncfusionDocumentation_Personal.DataBinding
         {
             textValue = "Syncfusion Blazor";
         }
+
+        protected Dictionary<string, object> htmlAttribute = new Dictionary<string, object>()
+        {
+            { "bind", "textValue" }
+        };
     }
 }
