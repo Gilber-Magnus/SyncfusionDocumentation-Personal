@@ -1,0 +1,23 @@
+﻿@page "/inotifyproperty"
+@inherits INotifyPropertyBase
+
+@* I don't understand the code because of event handling *@
+
+<h3>In the below example, DataOrder implements INotifyPropertyChanged interface and raises a PropertyChanged event when property values are changed. DataGrid automatically updates its property values are changed in data object by listening to PropertyChanged event.</h3>
+<hr />
+
+<SfButton ID="update" @onclick="UpdateRecord">Update Data</SfButton>
+<br />
+<br />
+<SfGrid DataSource="@observableData" AllowPaging="true">
+    <GridEditSettings AllowAdding="true" AllowEditing="true" AllowDeleting="true"></GridEditSettings>
+    <GridColumns>
+        <GridColumn Field=@nameof(DataOrder.OrderID) HeaderText="Order ID" IsPrimaryKey="true" TextAlign="@TextAlign.Center" HeaderTextAlign="@TextAlign.Center" Width="140"></GridColumn>
+        <GridColumn Field=@nameof(DataOrder.CustomerName) HeaderText="Customer Name" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(DataOrder.Freight) HeaderText="Freight" EditType="EditType.NumericEdit" Format="C2" Width="140" TextAlign="@TextAlign.Right" HeaderTextAlign="@TextAlign.Right"></GridColumn>
+        <GridColumn Field=@nameof(DataOrder.OrderDate) HeaderText="Order Date" EditType="EditType.DatePickerEdit" Format="d" TextAlign="TextAlign.Right" Type="ColumnType.Date" Width="160"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
+
+
