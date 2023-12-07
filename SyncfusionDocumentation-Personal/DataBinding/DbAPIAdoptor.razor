@@ -1,11 +1,12 @@
 ﻿@page "/apiadoptor"
 @using Syncfusion.Blazor.Data
 @using SyncfusionDocumentation_Personal.Data
-
 <h3>Bind data using WebApiAdaptor of DataManager</h3>
 <hr />
-<SfGrid TValue="Order">
+
+<SfGrid TValue="Order" Toolbar="@(new List<string>() { "Add", "Edit", "Delete", "Cancel", "Update" })">
     <SfDataManager Url="api/Orders" Adaptor="Adaptors.WebApiAdaptor"></SfDataManager>
+    <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="Syncfusion.Blazor.Grids.EditMode.Normal"></GridEditSettings>
     <GridColumns>
         <GridColumn Field=@nameof(Order.OrderId) HeaderText="Order ID" IsPrimaryKey="true" Visible="false" TextAlign="TextAlign.Right" Width="120"></GridColumn>
         <GridColumn Field=@nameof(Order.CustomerId) HeaderText="Customer Name" Width="150"></GridColumn>

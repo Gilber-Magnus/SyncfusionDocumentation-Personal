@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using SyncfusionDocumentation_Personal.Data;
 using Syncfusion.Blazor;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSyncfusionBlazor();
+builder.Services.AddDbContext<OrderDetailsDbContext>(option =>
+                option.UseSqlServer(builder.Configuration.GetConnectionString("OrdersDetailsDatabase")));
 
 var app = builder.Build();
 
@@ -29,6 +32,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.MapDefaultControllerRoute();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
