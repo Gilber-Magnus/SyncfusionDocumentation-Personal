@@ -1,7 +1,16 @@
-﻿@page "/twowaydatabinding"
+﻿@page "/restfuldatabinding"
 @inherits TwoWayDatabindingBase
 
 <P>Bound value in TextBox is: @textValue</P>
 
 <SfTextBox HtmlAttributes="@htmlAttribute"></SfTextBox>
 
+<hr />
+<h3>Bind component generated dynamically using RenderFragment</h3>
+
+<div id="component-container">
+    @dynamicComponent
+</div>
+
+<SfButton ID="dynamic-button" Content="Render DatePicker" @onclick="RenderComponent"></SfButton>
+<SfButton ID="button" Content="Change Date" @onclick="onChange"></SfButton>
