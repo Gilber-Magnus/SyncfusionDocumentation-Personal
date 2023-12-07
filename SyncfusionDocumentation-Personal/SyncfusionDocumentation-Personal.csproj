@@ -20,6 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Npm" Version="3.5.2" />
     <PackageReference Include="Syncfusion.Blazor.Buttons" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.Calendars" Version="23.1.42" />
@@ -32,10 +37,6 @@
     <PackageReference Include="Syncfusion.Blazor.Popups" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="23.1.42" />
     <PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="23.1.42" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\ODataServiceProject\ODataServiceProject\ODataServiceProject.csproj" />
   </ItemGroup>
 
 </Project>
