@@ -13,7 +13,8 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSyncfusionBlazor();
 builder.Services.AddDbContext<OrderDetailsDbContext>(option =>
                 option.UseSqlServer(builder.Configuration.GetConnectionString("OrdersDetailsDatabase")));
-
+//custom adaptor as component service
+builder.Services.AddScoped<Order>();
 var app = builder.Build();
 
 //Register Syncfusion License
