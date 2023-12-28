@@ -1,14 +1,13 @@
-﻿@page "/autocompleteaccess"
-
+﻿@page "/comboboxaccess"
 @using Syncfusion.Blazor.DropDowns
 
-<SfAutoComplete TValue="string" TItem="Country" @ref="AutoObj" Placeholder="Select a country" Enabled="@enable" @onkeypress="@(e => KeyPressed(e))" DataSource="@LocalData">
-    <AutoCompleteFieldSettings Value="Name"></AutoCompleteFieldSettings>
-</SfAutoComplete>
+<SfComboBox TValue="string" TItem="Country" @ref="ComboObj" Enabled="@enable" Placeholder="Select a country" @onkeypress="@(e => KeyPressed(e))" DataSource="@LocalData">
+    <ComboBoxFieldSettings Value="Code" Text="Name"></ComboBoxFieldSettings>
+</SfComboBox>
 
 @code {
 
-    public SfAutoComplete<string, Country> AutoObj;
+    public SfComboBox<string, Country> ComboObj;
 
     public bool enable { get; set; } = true;
     public class Country

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace SyncfusionDocumentation_Personal.DataBinding
+namespace SyncfusionDocumentation_Personal.Pages.DataBinding
 {
     public class INotifyPropertyBase :ComponentBase
     {

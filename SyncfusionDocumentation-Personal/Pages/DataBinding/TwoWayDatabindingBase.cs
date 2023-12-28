@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor.Calendars;
 
-namespace SyncfusionDocumentation_Personal.DataBinding
+namespace SyncfusionDocumentation_Personal.Pages.DataBinding
 {
     public class TwoWayDatabindingBase : ComponentBase
     {

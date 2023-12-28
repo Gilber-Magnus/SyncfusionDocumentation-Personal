@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Collections.ObjectModel;
 
-namespace SyncfusionDocumentation_Personal.DataBinding
+namespace SyncfusionDocumentation_Personal.Pages.DataBinding
 {
     public class ICollectionBase : ComponentBase
     {
