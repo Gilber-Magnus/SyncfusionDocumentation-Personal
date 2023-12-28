@@ -1,0 +1,28 @@
+﻿@page "/chipaccess"
+
+<SfChip ID="chip-avatar" EnableDelete="true" CssClass="e-chip-avatar" Selection="Syncfusion.Blazor.Buttons.SelectionType.Single">
+    <ChipItems>
+        <ChipItem Text="Andrew" LeadingIconCss='andrew'></ChipItem>
+        <ChipItem Text="Janet" LeadingIconCss='janet'></ChipItem>
+        <ChipItem Text="Laura" LeadingIconCss='laura'></ChipItem>
+        <ChipItem Text="Margaret" LeadingIconCss='margaret'></ChipItem>
+    </ChipItems>
+</SfChip>
+
+<style>
+    #chip-avatar .andrew {
+        background-image: url('./andrew.png')
+    }
+
+    #chip-avatar .margaret {
+        background-image: url('./margaret.png')
+    }
+
+    #chip-avatar .laura {
+        background-image: url('./laura.png')
+    }
+
+    #chip-avatar .janet {
+        background-image: url('./janet.png')
+    }
+</style>
