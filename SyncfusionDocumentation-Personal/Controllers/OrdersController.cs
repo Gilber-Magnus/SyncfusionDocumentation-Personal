@@ -3,7 +3,7 @@ using SyncfusionDocumentation_Personal.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace SyncfusionDocumentation_Personal.Controller
+namespace SyncfusionDocumentation_Personal.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

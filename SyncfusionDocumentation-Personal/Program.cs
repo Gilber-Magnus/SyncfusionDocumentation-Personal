@@ -20,32 +20,24 @@ builder.Services.AddDbContext<OrderDetailsDbContext>(option =>
 builder.Services.AddScoped<Order>();
 //Register the Syncfusion locale service to localize Syncfusion Blazor components.
 builder.Services.AddSingleton(typeof(ISyncfusionStringLocalizer), typeof(SyncfusionLocalizer));
+//dynamically setting the culture
+builder.Services.AddControllers();
 
-var host = builder.Build();
-
-//Setting culture of the application
-var jsInterop = host.Services.GetRequiredService<IJSRuntime>();
-var result = await jsInterop.InvokeAsync<string>("cultureInfo.get");
-CultureInfo culture;
-if (result != null)
-{
-    culture = new CultureInfo(result);
-}
-else
-{
-    culture = new CultureInfo("en-US");
-    await jsInterop.InvokeVoidAsync("cultureInfo.set", "en-US");
-}
-CultureInfo.DefaultThreadCurrentCulture = culture;
-CultureInfo.DefaultThreadCurrentUICulture = culture;
-//End of culture
+var supportedCultures = new[] { "en-US", "de-DE", "fr-FR", "ar-AE", "zh-HK" };
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
 
 var app = builder.Build();
 
+//dynamically setting the culture
+app.UseRequestLocalization(localizationOptions);
 //Register Syncfusion License
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF1cWWhIfEx1RHxQdld5ZFRHallYTnNWUj0eQnxTdEZiWH1dcHVWTmNaVkFzWw==");
 
-app.UseRequestLocalization("de-DE");
+//statically setting the culture
+//app.UseRequestLocalization("fr-FR");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -61,6 +53,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+//dynamically setting the culture
+app.MapControllers();
 
 app.MapDefaultControllerRoute();
 
