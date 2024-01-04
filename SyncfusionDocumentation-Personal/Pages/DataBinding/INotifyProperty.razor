@@ -9,8 +9,8 @@
 <SfButton ID="update" @onclick="UpdateRecord">Update Data</SfButton>
 <br />
 <br />
-<SfGrid DataSource="@observableData" AllowPaging="true">
-    <GridEditSettings AllowAdding="true" AllowEditing="true" AllowDeleting="true"></GridEditSettings>
+<SfGrid DataSource="@observableData" AllowPaging="true" AllowSorting="true">
+    <GridEditSettings Mode="Syncfusion.Blazor.Grids.EditMode.Dialog" AllowAdding="true" AllowEditing="true" AllowDeleting="true"></GridEditSettings>
     <GridColumns>
         <GridColumn Field=@nameof(DataOrder.OrderID) HeaderText="Order ID" IsPrimaryKey="true" TextAlign="@TextAlign.Center" HeaderTextAlign="@TextAlign.Center" Width="140"></GridColumn>
         <GridColumn Field=@nameof(DataOrder.CustomerName) HeaderText="Customer Name" Width="150"></GridColumn>
