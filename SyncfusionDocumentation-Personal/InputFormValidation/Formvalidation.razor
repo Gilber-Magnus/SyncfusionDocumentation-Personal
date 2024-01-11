@@ -1,0 +1,30 @@
+﻿@page "/editformvalidation"
+@using System.ComponentModel.DataAnnotations
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+<EditForm Model="@employeeDetailsModel">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+        <label for="first-name">FirstName:</label>
+        <SfTextBox ID="first-name" @bind-Value="employeeDetailsModel.FirstName"></SfTextBox>
+        <ValidationMessage For="@(() => employeeDetailsModel.FirstName)"></ValidationMessage>
+    </div>
+    <div>
+        <label for="last-name">Last Name</label>
+        <SfTextBox ID="last-name" @bind-Value="employeeDetailsModel.LastName"></SfTextBox>
+        <ValidationMessage For="@(() => employeeDetailsModel.LastName)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+@code {
+    private EmployeeDetails employeeDetailsModel = new EmployeeDetails();
+
+    public class EmployeeDetails
+    {
+        [Required(ErrorMessage = "Please enter {0}." )]
+        public string FirstName { get; set; }   
+
+        [Required(ErrorMessage = "Please enter {0}.")]
+        public string LastName { get; set; }
+    }
+}
