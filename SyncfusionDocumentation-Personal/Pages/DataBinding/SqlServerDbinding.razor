@@ -1,8 +1,10 @@
 ﻿@page "/sqlserverdatabinding"
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor.Grids
 
 <SfGrid @ref="Grid" TValue="Order" AllowPaging="true" >
     <SfDataManager Adaptor="Adaptors.CustomAdaptor">
-        <CustomAdaptorComponent></CustomAdaptorComponent>
+        <CustomAdoptorComponent></CustomAdoptorComponent>
     </SfDataManager>
     <GridColumns>
         <GridColumn Field=@nameof(Order.OrderID) HeaderText="Order ID" IsIdentity="true" IsPrimaryKey="true" TextAlign="TextAlign.Right" Width="120">
