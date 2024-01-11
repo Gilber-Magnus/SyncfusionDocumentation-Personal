@@ -14,8 +14,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 //enable overall Right-To-Left while registering syncfusion
-builder.Services.AddSyncfusionBlazor();
 //options => { options.EnableRtl = true; }
+builder.Services.AddSyncfusionBlazor(options => { options.Animation = GlobalAnimationMode.Default;});
 builder.Services.AddDbContext<OrderDetailsDbContext>(option =>
                 option.UseSqlServer(builder.Configuration.GetConnectionString("OrdersDetailsDatabase")));
 //custom adaptor as component service
