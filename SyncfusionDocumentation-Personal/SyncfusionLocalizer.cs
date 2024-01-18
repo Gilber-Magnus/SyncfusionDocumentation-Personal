@@ -1,8 +1,7 @@
 ﻿namespace SyncfusionDocumentation_Personal
 {
-    using Syncfusion.Blazor;
 
-    public class SyncfusionLocalizer : ISyncfusionStringLocalizer
+    public class SyncfusionLocalizer : Syncfusion.Blazor.ISyncfusionStringLocalizer
     {
         public string GetText(string key)
         {
