@@ -2,7 +2,7 @@
 @using System.ComponentModel.DataAnnotations
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.Buttons
-<EditForm Model="@employeeDetailsModel">
+<EditForm Model="@employeeDetailsModel" OnSubmit="FormSubmit">
     <DataAnnotationsValidator/>
     <div class="form-group">
         <label for="first-name">FirstName:</label>
@@ -26,5 +26,31 @@
 
         [Required(ErrorMessage = "Please enter {0}.")]
         public string LastName { get; set; }
+    }
+
+    //Onvalidsubmit and oninvalidsubmit options
+    private void FormValidSubmit(EditContext context)
+    {
+        //Triggers when form input has valid values
+    }
+
+    private void FormInvalidSubmit(EditContext context)
+    {
+        //Triggers when form input has invalid values
+    }
+
+    //Onsubmit option
+    private void FormSubmit(EditContext context)
+    {
+        bool isValid = context.Validate();
+
+        if (isValid)
+        {
+            //Triggers when form input has valid values
+        }
+        else
+        {
+            //Triggers when form input has invalid values
+        }
     }
 }
