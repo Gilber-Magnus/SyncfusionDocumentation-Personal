@@ -1,44 +1,40 @@
 ﻿@page "/autocompletevalidation"
-@using System.ComponentModel.DataAnnotations
+@using System.ComponentModel.DataAnnotations;
 @using Syncfusion.Blazor.Buttons
 @using Syncfusion.Blazor.DropDowns
 
-<EditForm Model="dropdownModel">
-    <DataAnnotationsValidator/>
+
+<EditForm Model="@dropdownModel">
+    <DataAnnotationsValidator />
     <div class="form-group">
         <label for="country">Country:</label>
-        <SfAutoComplete ID="country" @bind-Value="dropdownModel.Country" DataSource="Countries">
+        <SfAutoComplete ID="country" @bind-Value="@dropdownModel.Country" DataSource="@Countries">
             <AutoCompleteFieldSettings Value="Name"></AutoCompleteFieldSettings>
         </SfAutoComplete>
-        <ValidationMessage For="@(() => dropdownModel.Country)"/>
+        <ValidationMessage For="@(() => dropdownModel.Country)"></ValidationMessage>
     </div>
     <SfButton>Submit</SfButton>
 </EditForm>
 
-
-
 @code {
     private DropdownModel dropdownModel = new DropdownModel();
 
-    //This is a Dto
     public class DropdownModel
     {
         [Required(ErrorMessage = "Please select your country.")]
         public string Country { get; set; }
     }
 
-
     public class Country
     {
         public string Name { get; set; }
-
         public string Code { get; set; }
     }
 
-    public List<Country> Countries = new List<Country>()
+    public List<Country> Countries = new List<Country>
     {
-        new Country () { Name = "Australia", Code = "AU"},
-        new Country () {Name = "Bermuda", Code = "BM"},
-        new Country () {Name = "Canada", Code = "CA"}
+        new Country() { Name = "Australia", Code = "AU" },
+        new Country() { Name = "Bermuda", Code = "BM" },
+        new Country() { Name = "Canada", Code = "CA" }
     };
 }

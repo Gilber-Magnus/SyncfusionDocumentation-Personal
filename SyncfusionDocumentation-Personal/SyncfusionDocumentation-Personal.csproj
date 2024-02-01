@@ -29,7 +29,7 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Npm" Version="3.5.2" />
-    <PackageReference Include="Syncfusion.Blazor" Version="24.1.46" />
+    <PackageReference Include="Syncfusion.Blazor" Version="24.2.3" />
   </ItemGroup>
 
   <ItemGroup>
