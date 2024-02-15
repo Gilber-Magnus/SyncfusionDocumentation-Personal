@@ -1,11 +1,11 @@
-﻿namespace SyncfusionDocumentation_Personal
+﻿namespace SyncfusionDocumentation_Personal.Culture
 {
 
     public class SyncfusionLocalizer : Syncfusion.Blazor.ISyncfusionStringLocalizer
     {
         public string GetText(string key)
         {
-            return this.ResourceManager.GetString(key);
+            return ResourceManager.GetString(key);
         }
 
         public System.Resources.ResourceManager ResourceManager
@@ -13,7 +13,7 @@
             get
             {
                 // Replace the ApplicationNamespace with your application name.
-                return SyncfusionDocumentation_Personal.Resources.SfResources.ResourceManager;
+                return Resources.SfResources.ResourceManager;
 
                 //For .Net Maui Blazor App
                 // Replace the ApplicationNamespace with your application name.
