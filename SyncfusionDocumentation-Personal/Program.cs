@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Components.Web;
 using SyncfusionDocumentation_Personal.Data;
 using Syncfusion.Blazor;
 using Microsoft.EntityFrameworkCore;
-using SyncfusionDocumentation_Personal;
 using Microsoft.JSInterop;
 using System.Globalization;
+using SyncfusionDocumentation_Personal.Culture;
 
 var builder = WebApplication.CreateBuilder(args);
 
