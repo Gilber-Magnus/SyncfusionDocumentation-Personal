@@ -29,7 +29,17 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Npm" Version="3.5.2" />
-    <PackageReference Include="Syncfusion.Blazor" Version="24.2.3" />
+    <PackageReference Include="Syncfusion.Blazor.Buttons" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Calendars" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Data" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Grid" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Inputs" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Layouts" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Navigations" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Popups" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Themes" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="24.2.6" />
   </ItemGroup>
 
   <ItemGroup>
