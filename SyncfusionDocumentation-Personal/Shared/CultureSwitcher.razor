@@ -9,7 +9,7 @@
         <select @bind="Culture">
             @foreach (var culture in supportedCultures)
             {
-                <option value="@culture">Culture.DisplayName</option>
+                <option value="@culture">@culture.Name</option>
             }
         </select>
     </label>
