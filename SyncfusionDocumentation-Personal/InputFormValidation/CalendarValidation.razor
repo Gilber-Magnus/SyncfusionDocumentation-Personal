@@ -1,0 +1,27 @@
+﻿@page "/calendarvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@dateModel">
+    <DataAnnotationsValidator/>
+
+    <div class="form-group">
+        <label for="calendar">Calendar</label>
+        <SfCalendar ID="calendar" @bind-Value="dateModel.Date"></SfCalendar>
+        <ValidationMessage For="@(() => dateModel.Date)"></ValidationMessage>
+    </div>
+
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+
+@code {
+   private DateModel dateModel = new DateModel();
+
+   public class DateModel
+    {
+        [Required]
+        [Range(typeof(DateTime), "1/1/1940", "31/12/2006", 
+        ErrorMessage = "The {0} value must be between {1:dd/MM/yyyy} and {2:dd/MM/yyyy}.")]
+        public DateTime? Date { get; set; }
+    }
+}
