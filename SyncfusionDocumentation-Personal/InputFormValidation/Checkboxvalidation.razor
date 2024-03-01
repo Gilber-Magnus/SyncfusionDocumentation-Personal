@@ -1,0 +1,26 @@
+﻿@page "/checkboxvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@myModel">
+    <DataAnnotationsValidator/>
+
+    <div class="form-group">
+        <SfCheckBox Label="I accept the terms and conditions" @bind-Checked="myModel.IsAccepted">
+        </SfCheckBox>
+        <ValidationMessage For="@(() => myModel.IsAccepted)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code {
+    public MyModel myModel = new MyModel();
+    
+
+    public class MyModel
+    {
+        [Required]
+        [Range(typeof(bool), "true", "true", ErrorMessage="You need to accept the terms and conditions.")]
+        public bool IsAccepted { get; set; }
+    }
+}
+
