@@ -1,0 +1,43 @@
+﻿@page "/dropdownlistvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@dropdownModel">
+    <DataAnnotationsValidator/>
+
+    <div class="form-group">
+        <label for="country">Country:</label
+        <SfDropDownList ID="country" @bind-Value="@dropdownModel.Country" DataSource="@Countries">
+            <DropDownListFieldSettings Value="Name"></DropDownListFieldSettings>
+        </SfDropDownList>
+        <ValidationMessage For="@(() => dropdownModel.Country )"></ValidationMessage>
+    </div>
+    
+    <SfButton>Submit</SfButton>
+
+</EditForm>
+
+@code{
+    public DropdownModel dropdownModel = new DropdownModel();
+
+
+    public class DropdownModel
+    {
+        [Required(ErrorMessage="Please select your country.")]
+        public string Country { get; set; }
+    }
+
+    public class Country
+    {
+        public string Name { get; set; }
+        public string Code { get; set; }
+
+    }
+
+    public List<Country> Countries = new List<Country>()
+    {
+        new Country() { Name = "Australia", Code = "AU" },
+        new Country() { Name = "Bermuda", Code = "BM" },
+        new Country() { Name = "Cameroon", Code = "CM" },
+        new Country() { Name = "Canada", Code = "CA" } 
+    };
+}

@@ -1,0 +1,26 @@
+﻿@page "/datepickervalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@dateModel">
+    <DataAnnotationsValidator/>
+
+    <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <SfDatePicker ID="dob" @bind-Value="dateModel.Date">
+        </SfDatePicker>
+        <ValidationMessage For="@(() => dateModel.Date)"></ValidationMessage>
+    </div>
+    
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code{
+    public DateModel dateModel = new DateModel();
+
+    public class DateModel
+    {
+        [Required]
+        [Range(typeof(DateTime), "1/1/1940", "12/31/2006", ErrorMessage="The {0} value must be between {1:dd/MM/yyyy} and {2:dd/MM/yyyy}.")]
+        public DateTime? Date { get; set; }
+    }
+}
