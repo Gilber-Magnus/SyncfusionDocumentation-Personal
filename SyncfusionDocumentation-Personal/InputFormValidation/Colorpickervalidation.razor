@@ -1,0 +1,24 @@
+﻿@page "/colorpickervalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@personal">
+    <DataAnnotationsValidator/>
+
+     <div class="form-group">
+        <label for="fav-color">Favorite Color:</label>
+        <SfColorPicker ID="fav-color" @bind-Value="@personal.FavoriteColor"></SfColorPicker>
+        <ValidationMessage For="@(() => personal.FavoriteColor)"></ValidationMessage>
+    </div>
+    
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code{
+    public Personal personal = new Personal();
+
+    public class Personal
+    {
+        [Required(ErrorMessage="Please specify your favorite color.")]
+        public string FavoriteColor { get; set; }
+    }
+}
