@@ -34,6 +34,7 @@
     <PackageReference Include="Syncfusion.Blazor.Data" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.Grid" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.InPlaceEditor" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.Inputs" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.Layouts" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.Navigations" Version="24.2.6" />
@@ -48,6 +49,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SfResources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="InputFormValidation\Inplaceeditorvalidation.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
