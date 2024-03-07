@@ -1,0 +1,45 @@
+﻿@page "/maskedtextboxvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@cardModel">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+        <label for="credit-card">Credit Card:</label>
+        <SfMaskedTextBox ID="credit-card" Mask="0000-0000-0000-0000" @bind-Value="@cardModel.CreditCard"></SfMaskedTextBox>
+        <ValidationMessage For="@(() => cardModel.CreditCard)"></ValidationMessage>
+    </div>
+
+    <div class="form-group">
+        <label for="pin-number">Pin Number:</label>
+        <SfMaskedTextBox ID="pin-number" Mask="0000" @bind-Value="@cardModel.Pin"></SfMaskedTextBox>
+        <ValidationMessage For="@(() => cardModel.Pin)"></ValidationMessage>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone:</label>
+        <SfMaskedTextBox ID="phone" Mask="+1-000-000-0000" @bind-Value="cardModel.Phone"></SfMaskedTextBox>
+        <ValidationMessage For="@(() => cardModel.Phone)"></ValidationMessage>
+    </div>
+
+    <SfButton>Submit</SfButton>
+
+</EditForm>
+
+@code{
+    private CardModel cardModel = new CardModel();
+
+    public class CardModel
+    {
+        [Required]
+        [RegularExpression("^4[0-9{12}(?:[0-9]{3})?$]", ErrorMessage="Please enter a valid credit card number.")]
+        public string CreditCard { get; set; }
+
+        [Required]
+        [RegularExpression("^[0-9]{4}$", ErrorMessage="Invalid pin number.")]
+        public string Pin { get; set; }
+
+        [Required]
+        [MinLength(10, ErrorMessage ="Please enter a valid phone number.")]
+        public string Phone { get; set; }
+    }
+}
