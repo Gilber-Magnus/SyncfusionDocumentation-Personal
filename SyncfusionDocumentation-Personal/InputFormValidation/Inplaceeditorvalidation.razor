@@ -1,0 +1,27 @@
+﻿@page "/inplaceeditorvalidation"
+@using Syncfusion.Blazor.InPlaceEditor
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@editorModel">
+    <DataAnnotationsValidator/>
+     <div class="form-group">
+        <label for="name">Employee Name:</label>
+        <SfInPlaceEditor ID="name" Type="Syncfusion.Blazor.InPlaceEditor.InputType.Text" @bind-Value="@editorModel.Name">
+            <EditorComponent>
+                <SfTextBox @bind-Value="@editorModel.Name"></SfTextBox>
+            </EditorComponent>
+        </SfInPlaceEditor>
+        <ValidationMessage For="@(() => editorModel.Name)"></ValidationMessage>
+        </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code{
+    private EditorModel editorModel = new EditorModel();
+
+    public class EditorModel
+    {
+        [Required(ErrorMessage="Employee name is required.")]
+        public string Name { get; set; }
+    }
+}

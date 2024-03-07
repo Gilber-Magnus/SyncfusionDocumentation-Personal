@@ -9,6 +9,8 @@ using SyncfusionDocumentation_Personal.Culture;
 
 var builder = WebApplication.CreateBuilder(args);
 
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cWWdCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWXxed3RRRmhdUkRxW0Y=");
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -24,6 +26,8 @@ builder.Services.AddScoped<Order>();
 builder.Services.AddSingleton(typeof(ISyncfusionStringLocalizer), typeof(SyncfusionLocalizer));
 //dynamically setting the culture
 builder.Services.AddControllers();
+
+
 
 var supportedCultures = new[] { "en-US", "de-DE", "fr-FR", "ar-AE", "zh-HK" };
 var localizationOptions = new RequestLocalizationOptions()
