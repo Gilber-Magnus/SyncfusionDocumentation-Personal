@@ -1,0 +1,55 @@
+﻿@page "/customvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@rangeModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <SfSlider ID="price" @bind-Value="@rangeModel.Price" Type="SliderType.Range" Min="0" Max="1000">
+            <SliderTicks Placement="Placement.After" ShowSmallTicks="true" LargeStep="100" SmallStep="50"></SliderTicks>
+        </SfSlider>
+        <ValidationMessage For="@(() => rangeModel.Price)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code{
+
+
+
+    private RangeModel rangeModel = new RangeModel();
+
+    public class RangeModel
+    {
+        [Required]
+        [CustomRange(300, 700)]
+        public int[] Price { get; set; } = { 500, 600 };
+    }
+
+    public class CustomRangeAttribute : ValidationAttribute
+    {
+        public int StartRange { get; set; }
+
+        public int EndRange { get; set; }
+
+        public CustomRangeAttribute(int startRange, int endRange)
+        {
+            StartRange = startRange;
+            EndRange = endRange;
+
+        }
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            var inputValues = (int[])value;
+
+            if(inputValues[0] < StartRange || inputValues[1] > EndRange)
+            {
+               return new ValidationResult($"The {validationContext.DisplayName} should be between {StartRange} and {EndRange}.");
+            }
+            return ValidationResult.Success;
+        }
+
+    }
+
+}

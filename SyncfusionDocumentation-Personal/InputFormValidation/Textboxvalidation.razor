@@ -1,0 +1,24 @@
+﻿@page "/textboxvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@editorModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="employee-name">Employee Name:</label>
+        <SfTextBox ID="employee-name" @bind-Value="editorModel.Name"></SfTextBox>
+        <ValidationMessage For="@(() => editorModel.Name)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code{
+    private EditorModel editorModel = new EditorModel();
+
+    public class EditorModel
+    {
+        [Required(ErrorMessage="Enter employee name.")]
+        [MinLength(3, ErrorMessage="Names should have more than two characters")]
+        public string Name { get; set; }
+    }
+
+}
