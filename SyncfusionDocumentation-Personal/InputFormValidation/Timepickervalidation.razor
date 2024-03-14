@@ -1,0 +1,22 @@
+﻿@page "/timepickervalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@dateModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="work-hours">Work Hours:</label>
+        <SfTimePicker ID="work-hours" @bind-Value="@dateModel.WorkHours"></SfTimePicker>
+        <ValidationMessage For="@(() => dateModel.WorkHours)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code{
+    private DateModel dateModel = new DateModel();
+    public class DateModel
+    {
+        [Required]
+        [Range(typeof(DateTime), "09:00:00 AM", "06:00:00 PM", ErrorMessage="The work hours should be between {1} and {2}.")]
+        public DateTime? WorkHours { get; set; }
+    }
+}
