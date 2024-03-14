@@ -1,0 +1,46 @@
+﻿@page "/multiselectvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@dropdownModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="sports">Favorite Sports:</label>
+        <SfMultiSelect ID="sports" @bind-Value="dropdownModel.Games" DataSource="@Games">
+            <MultiSelectFieldSettings Text="Text" Value="ID"></MultiSelectFieldSettings>
+        </SfMultiSelect>
+        <ValidationMessage For="@(() => dropdownModel.Games)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code {
+    private DropdownModel dropdownModel = new DropdownModel();
+
+    public class DropdownModel
+    {
+        [Required]
+        [MinLength(3, ErrorMessage = "Please select atleast 3 games.")]
+        public string[] Games { get; set; }
+    }
+
+    public class GameFields
+    {
+        public string ID { get; set; }
+
+        public string Text { get; set; }
+    }
+
+    public List<GameFields> Games = new List<GameFields>()
+    {
+        new GameFields(){ ID= "Game1", Text= "American Football" },
+        new GameFields(){ ID= "Game2", Text= "Badminton" },
+        new GameFields(){ ID= "Game3", Text= "Basketball" },
+        new GameFields(){ ID= "Game4", Text= "Cricket" },
+        new GameFields(){ ID= "Game5", Text= "Football" },
+        new GameFields(){ ID= "Game6", Text= "Golf" },
+        new GameFields(){ ID= "Game7", Text= "Hockey" },
+        new GameFields(){ ID= "Game8", Text= "Rugby"},
+        new GameFields(){ ID= "Game9", Text= "Snooker" },
+        new GameFields(){ ID= "Game10", Text= "Tennis"},
+    };
+}

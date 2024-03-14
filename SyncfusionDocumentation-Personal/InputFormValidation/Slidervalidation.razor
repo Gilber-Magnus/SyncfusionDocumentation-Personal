@@ -1,0 +1,28 @@
+﻿@page "/slidervalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@myModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="volume">Volume:</label>
+        <SfSlider ID="volume" @bind-Value="@myModel.Volume" Type="SliderType.MinRange">
+            <SliderTicks Placement="Placement.After" ShowSmallTicks="true" LargeStep="10" SmallStep="5"></SliderTicks>
+        </SfSlider>
+        <ValidationMessage For="(() => myModel.Volume)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code {
+
+    private MyModel myModel = new MyModel();
+
+    public class MyModel
+    {
+
+    [Required]
+    [Range(0, 70, ErrorMessage = "Reached higher volume limit. Please reduce to below {2}.")]
+    public int Volume { get; set; }
+
+    }
+}
