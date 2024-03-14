@@ -39,6 +39,7 @@
     <PackageReference Include="Syncfusion.Blazor.Layouts" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.Navigations" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.Popups" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.RichTextEditor" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="24.2.6" />
     <PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="24.2.6" />
   </ItemGroup>

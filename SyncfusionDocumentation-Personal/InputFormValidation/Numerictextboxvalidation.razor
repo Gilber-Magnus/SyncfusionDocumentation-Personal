@@ -1,0 +1,22 @@
+﻿@page "/numerictextboxvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@numericModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <SfNumericTextBox ID="age" @bind-Value=@numericModel.Age></SfNumericTextBox>
+        <ValidationMessage For="@(() => numericModel.Age)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+@code{
+private NumericModel numericModel = new NumericModel();
+
+    public class NumericModel
+    {
+        [Required]
+        [Range(typeof(int), "22", "50", ErrorMessage = "The {0} value should be between {1} and {2}.")]
+        public int Age { get; set; }
+    }
+}

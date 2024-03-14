@@ -1,0 +1,25 @@
+﻿@page "/radiobuttonvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@myModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <SfRadioButton Label="Small" Name="size" Value="1" @bind-Checked="@myModel.Value"></SfRadioButton>
+        <SfRadioButton Label="Medium" Name="size" Value="2" @bind-Checked="@myModel.Value"></SfRadioButton>
+        <SfRadioButton Label="Large" Name="size" Value="3" @bind-Checked="@myModel.Value"></SfRadioButton>
+         <SfRadioButton Label="Extra Large" Name="size" Value="4" @bind-Checked="@myModel.Value"></SfRadioButton>
+        <ValidationMessage For="@(() => myModel.Value)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code {
+    private MyModel myModel = new MyModel();
+
+    public class MyModel
+    {
+        [Required]
+        [Range(typeof(int), "1", "3", ErrorMessage = "Extra large size product is currently unavailable. Please select any other size.")]
+        public int Value { get; set; } = 1;
+    }
+}

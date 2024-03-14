@@ -1,0 +1,25 @@
+﻿@page "/richtexteditorvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@editorModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="comments">Comments:</label>
+        <SfRichTextEditor ID="comments" @bind-Value="@editorModel.Feedback" />
+        <ValidationMessage For="(() => editorModel.Feedback)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code{
+
+    private EditorModel editorModel = new EditorModel();
+
+    public class EditorModel
+    {
+        [Required]
+        [MaxLength(100, ErrorMessage = "The maximum length of this field is {1} character.")]
+        public string Feedback { get; set; }
+    }
+
+}
