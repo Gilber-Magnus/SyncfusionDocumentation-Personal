@@ -1,0 +1,20 @@
+﻿@page "/switchvalidation"
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@myModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <SfSwitch @bind-Checked="@myModel.IsAccepted">I agree to receive the newsletter.</SfSwitch>
+        <ValidationMessage For="@(() => myModel.IsAccepted)"></ValidationMessage>
+    </div>
+    <SfButton>Submit</SfButton>
+</EditForm>
+
+@code {
+    private MyModel myModel = new MyModel();
+    public class MyModel
+    {
+        [Range(typeof(bool), "true", "true", ErrorMessage = "You need to agree to receive the newsletter.")]
+        public bool IsAccepted { get; set; }
+    }
+}
