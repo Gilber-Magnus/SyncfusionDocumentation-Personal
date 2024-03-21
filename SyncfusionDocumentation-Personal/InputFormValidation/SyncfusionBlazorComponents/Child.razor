@@ -1,0 +1,36 @@
+﻿@page "/syncfusionchildvalidation"
+@using System.Linq.Expressions
+
+<label for="@ID">@Label</label>
+<SfTextBox ID="@ID" Value="@Text" ValueChanged="@((text) => Text = text )" ValueExpression="@TextExpression"></SfTextBox>
+
+@code{
+
+    [Parameter]
+    public string ID { get; set; }
+
+    [Parameter]
+    public string Label { get; set; }
+
+    [Parameter]
+    public string Text
+    { get => text;
+        set
+        {
+            if(text !=value)
+            {
+                text = value;
+                TextChanged.InvokeAsync(value);
+            }
+        }
+    }
+
+    private string text;
+
+    [Parameter]
+    public EventCallback<string> TextChanged { get; set; }
+
+    [Parameter]
+    public Expression<Func<string>> TextExpression { get; set; }
+
+}

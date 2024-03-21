@@ -1,0 +1,22 @@
+﻿@page "/blazorchildvalidation"
+@using System.ComponentModel.DataAnnotations
+
+ <EditForm Model="@editorModel">
+     <DataAnnotationsValidator />
+     <div class="form-group">
+         <Child ID="name" Label="Name" @bind-Text="@editorModel.Name"></Child>
+         <ValidationMessage For="@(() => editorModel.Name)"></ValidationMessage>
+     </div>
+     <SfButton>Submit</SfButton>
+ </EditForm>
+
+
+@code {
+    private EditorModel editorModel = new EditorModel();
+    public class EditorModel
+    {
+        [Required(ErrorMessage = "Enter employee name.")]
+        [MinLength(3, ErrorMessage = "Name should have more than 2 characters.")]
+        public string Name { get; set; }
+    }
+ }

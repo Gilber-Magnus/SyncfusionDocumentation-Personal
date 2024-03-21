@@ -21,27 +21,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.17">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Npm" Version="3.5.2" />
-    <PackageReference Include="Syncfusion.Blazor.Buttons" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.Calendars" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.Data" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.Grid" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.InPlaceEditor" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.Inputs" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.Layouts" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.Navigations" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.Popups" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.RichTextEditor" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.Themes" Version="24.2.6" />
-    <PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="24.2.6" />
+    <PackageReference Include="Syncfusion.Blazor.Buttons" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.Calendars" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.Data" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.Grid" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.InPlaceEditor" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.Inputs" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.Layouts" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.Navigations" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.Popups" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.RichTextEditor" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.Themes" Version="25.1.35" />
+    <PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="25.1.35" />
   </ItemGroup>
 
   <ItemGroup>
