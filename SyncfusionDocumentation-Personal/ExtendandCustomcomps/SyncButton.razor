@@ -1,0 +1,49 @@
+﻿@page "/syncbutton"
+
+<button class="@className" disabled="@Disabled">@Content</button>
+
+@code{
+    private string ClassName = "btn";
+
+    [Parameter]
+    public ButtonStyles Styles { get; set; }
+
+    public enum ButtonStyles
+    {
+        Basic,
+        Success,
+        Info,
+        Warning,
+        Danger
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        ApplyStyles();
+    }
+
+    private void ApplyStyles()
+    {
+        if (IsPrimary)
+        {
+            className += " btn-primary";
+        }
+        else if (Styles == ButtonStyles.Success)
+        {
+            className += " btn-success";
+        }
+        else if (Styles == ButtonStyles.Info)
+        {
+            className += " btn-info";
+        }
+        else if (Styles == ButtonStyles.Warning)
+        {
+            className += " btn-warning";
+        }
+        else
+        {
+            className += " btn-danger";
+        }
+    }
+}

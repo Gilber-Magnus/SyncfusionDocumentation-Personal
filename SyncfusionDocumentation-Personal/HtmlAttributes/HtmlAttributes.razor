@@ -1,0 +1,47 @@
+﻿@page "/htmlattributes"
+
+<p>When both Blazor and Html attributes are used, Blazor attrubutes will be prioritized.</p>
+<SfTextBox ID="textbox" name="first-name" title="First name." minlength="15" Autocomplete="AutoComplete.Off"></SfTextBox>
+
+<p>HtmlAttribute</p>
+<SfTextBox HtmlAttributes="@( new() {{"style", "background:aliceblue;"}})"></SfTextBox>
+
+<p>Input Html/DOM Events</p>
+<div class="form-group">
+    <SfTextBox @onfocus="OnTextFocus" @onblur="OnTextFocusOut"></SfTextBox>
+</div>
+
+@if (eventName != string.Empty)
+{
+    <div class="alert alert-info">@eventName event is triggered on the TextBox.</div>
+}
+
+<p>Use Html Attributes and DOM Events in the root element</p>
+<SfChip @onmouseover="@OnChipHover" style="border:1px solid potato">
+    <ChipItems>
+        <ChipItem Text="Apple"></ChipItem>
+        <ChipItem Text="Mango"></ChipItem>
+        <ChipItem Text="Banana"></ChipItem>
+
+    </ChipItems>
+</SfChip>
+
+@code {
+    private string eventName = string.Empty;
+
+    void OnTextFocus()
+    {
+        eventName = "Focus";
+    }
+
+    void OnTextFocusOut()
+    {
+        eventName = "Focusout";
+    }
+
+    //attribute direct in the root element code
+    public void OnChipHover(MouseEventArgs args)
+    {
+        //Do someting here
+    }
+}

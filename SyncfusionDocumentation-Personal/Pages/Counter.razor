@@ -1,31 +1,19 @@
-﻿@page "/htmlattributes"
+﻿@page "/counter"
 
-<p>When both Blazor and Html attributes are used, Blazor attrubutes will be prioritized.</p>
-<SfTextBox ID="textbox" name="first-name" title="First name." minlength="15" Autocomplete="AutoComplete.Off"></SfTextBox>
+<PageTitle>Counter</PageTitle>
 
-<p>HtmlAttribute</p>
-<SfTextBox HtmlAttributes="@( new() {{"style", "background:aliceblue;"}})"></SfTextBox>
+<h1>Counter</h1>
 
-<p>Input Html/DOM Events</p>
-<div class="form-group">
-    <SfTextBox @onfocus="OnTextFocus" @onblur="OnTextFocusOut"></SfTextBox>
-</div>
+<p role="status">Current count: @currentCount</p>
 
-@if (eventName != string.Empty)
-{
-    <div class="alert alert-info">@eventName event is triggered on the TextBox.</div>
-}
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    private string eventName = string.Empty;
+    private int currentCount = 0;
 
-    void OnTextFocus()
+    private void IncrementCount()
     {
-        eventName = "Focus";
-    }
-
-    void OnTextFocusOut()
-    {
-        eventName = "Focusout";
+        currentCount++;
     }
 }
+
