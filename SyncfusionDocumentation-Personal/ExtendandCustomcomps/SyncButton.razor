@@ -1,9 +1,10 @@
 ﻿@page "/syncbutton"
+@inherits SfButton
 
 <button class="@className" disabled="@Disabled">@Content</button>
 
 @code{
-    private string ClassName = "btn";
+    private string className = "btn";
 
     [Parameter]
     public ButtonStyles Styles { get; set; }
