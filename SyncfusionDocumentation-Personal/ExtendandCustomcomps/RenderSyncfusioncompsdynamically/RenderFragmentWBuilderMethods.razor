@@ -1,0 +1,40 @@
+﻿@page "/fragmentwithbuildermethods"
+
+
+RenderTreebuilder error
+@* <SfChip>
+    <ChipItems>
+        @RenderChipItem("Apple")
+        @RenderChipItem("Banana")
+        @RenderChipItem("Mango")
+    </ChipItems>
+</SfChip>
+
+@code {
+    private RenderFragment RenderChipItem(string text)
+    {
+        RenderFragment chipItem = b =>
+        {
+            b.OpenComponent<ChipItem>(0);
+            b.AddAttribute(1, "Text", text);
+            b.CloseComponent();
+        };
+        return chipItem;
+    }
+} *@
+
+ @* 
+@RenderSfButton()
+
+@code {
+    private RenderFragment RenderSfButton()
+    {
+        RenderFragment button = b =>
+        {
+            b.OpenComponent<SfButton>(0);
+            b.AddAttribute(1, "Content", "My Button");
+            b.CloseComponent();
+        };
+        return button;
+    }
+} *@
