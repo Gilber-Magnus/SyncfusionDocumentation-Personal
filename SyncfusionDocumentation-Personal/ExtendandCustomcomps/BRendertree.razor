@@ -1,0 +1,25 @@
+﻿@page "/buildrendertreemethod"
+
+
+<SyncTextBox2 ID="first-name" Label="First Name:" TextAttributes="@textAttributes"></SyncTextBox2>
+
+<SyncTextBox2 ID="last-name" Label="Last Name:" TextAttributes="@textAttributes"></SyncTextBox2>
+
+<SyncTextBox2 ID="address" Label="Address:" TextAttributes="@textAttributes"></SyncTextBox2>
+
+<SyncTextBox2 ID="age" Label="Age:" TextAttributes="@textAttributes"></SyncTextBox2>
+
+<SyncTextBox2 ID="city" Label="City:" TextAttributes="@textAttributes"></SyncTextBox2>
+
+<SyncTextBox2 ID="country" Label="Country:" TextAttributes="@textAttributes"></SyncTextBox2>
+
+@code {
+    public Dictionary<string, object> textAttributes { get; set; } =
+        new Dictionary<string, object>() {
+             { "CssClass", "e-small" },
+             { "Autocomplete", AutoComplete.Off },
+             { "Width" , "250px" },
+             { "ShowClearButton", true }
+            };
+ }
+
