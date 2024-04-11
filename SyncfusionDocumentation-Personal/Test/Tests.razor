@@ -1,0 +1,19 @@
+﻿ @using Syncfusion.Blazor.Buttons
+
+<SfButton @onclick="OnButtonClick">My Button</SfButton>
+
+<span class="alert alert-info">Count: @clickCount</span>
+
+@code {
+    private int clickCount = 0;
+
+    [Parameter]
+    public int Step { get; set; } = 1;
+
+    private void OnButtonClick()
+    {
+        clickCount += Step;
+    }
+ }
+
+
