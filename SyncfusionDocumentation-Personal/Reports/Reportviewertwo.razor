@@ -3,23 +3,23 @@
 @using Microsoft.JSInterop
 @using Microsoft.AspNetCore.Components
 @inject IJSRuntime JSRuntime
-@using BlazorReportingTools.Data;
+@using SyncfusionDocumentation_Personal.Data
 
+<div id="report-viewer" style="width: 100%; height: 950px;"></div>
 
 @code {
     // ReportViewer options
-    BoldReportViewerOptions viewerOptions = new BoldReprtViewerOptions();
+    BoldReportViewerOptions viewerOptions = new BoldReportViewerOptions();
 
     // Used to render the Bold Report Viewer component in Blazor page.
     public async void RenderReportViewer()
     {
-        viewerOptions.ReportName = "sales-order-detail";
-        viewertOptions.ServiceURL = "/api/BoldReportsAPI";
+        viewerOptions.ReportPath = "sales-order-detail.rdl";
+        viewerOptions.ServiceURL = "/api/BoldReportsAPI";
         await JSRuntime.InvokeVoidAsync("BoldReports.RenderViewer", "report-viewer", viewerOptions);
     }
-
-    //Initial rendering of Bold Report Viewert
-    protected override vodi OnAfterRender(bool firstRender)
+    // Initial rendering of Bold Report Viewer
+    protected override void OnAfterRender(bool firstRender)
     {
         RenderReportViewer();
     }

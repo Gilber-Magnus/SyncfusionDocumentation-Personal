@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.JSInterop;
 using System.Globalization;
 using SyncfusionDocumentation_Personal.Culture;
+using BoldReports.Web.ReportViewer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +39,10 @@ var app = builder.Build();
 //dynamically setting the culture
 app.UseRequestLocalization(localizationOptions);
 //Register Syncfusion License
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF1cWWhIfEx1RHxQdld5ZFRHallYTnNWUj0eQnxTdEZiWH1dcHVWTmNaVkFzWw==");
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzIyOTM3MEAzMjM1MmUzMDJlMzBlT2FhK0FNc2xDRVJCSm04ZW5SQTl5MmQvckxBdUhJQTZPUUJCOXFzdjVJPQ==");
+
+//Register Bold license
+Bold.Licensing.BoldLicenseProvider.RegisterLicense("YOUR LICENSE TOKEN HERE");
 
 //statically setting the culture
 //app.UseRequestLocalization("fr-FR");

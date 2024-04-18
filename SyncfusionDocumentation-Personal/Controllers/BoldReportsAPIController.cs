@@ -34,17 +34,24 @@ public class BoldReportsAPIController : ControllerBase, IReportController
     }
 
     // Method will be called to initialize the report information to load the report with ReportHelper for processing.
+    [NonAction]
     public void OnInitReportOptions(ReportViewerOptions reportOption)
     {
-        string basePath = _hostingEnvironment.WebRootPath;
-        // Here, we have loaded the sales-order-detail.rdl report from the application folder wwwroot\Resources. sales-order-detail.rdl should be in the wwwroot\Resources application folder.
+        string basePath = Path.Combine(_hostingEnvironment.WebRootPath, "resources");
+        string reportPath = Path.Combine(basePath, reportOption.ReportModel.ReportPath);
 
-        System.IO.FileStream reportStream = new System.IO.FileStream(basePath + @"\resources\" + reportOption.ReportModel.ReportPath + ".rdl",
-            System.IO.FileMode.Open, System.IO.FileAccess.Read);
+        // Here, we have loaded the sales-order-detail.rdl report from the application folder wwwroot\Resources. sales-order-detail.rdl should be in the wwwroot\Resources application folder.
+        FileStream fileStream = new FileStream(reportPath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+        MemoryStream reportStream = new MemoryStream();
+        fileStream.CopyTo(reportStream);
+        reportStream.Position = 0;
+        fileStream.Close();
         reportOption.ReportModel.Stream = reportStream;
+    
     }
 
     // Method will be called when report is loaded internally to start the layout process with ReportHelper.
+    [NonAction]
     public void OnReportLoaded(ReportViewerOptions reportOption)
     {
        

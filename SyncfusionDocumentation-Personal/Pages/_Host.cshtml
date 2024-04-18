@@ -19,16 +19,7 @@
     <script src="_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js" type="text/javascript"></script>
 
     @* Content Security Policy *@
-    <meta http-equiv="Content-Security-Policy"
-          content="base-uri 'self';
-        default-src 'self';
-        connect-src 'self' https: wss:;
-        img-src data: https:;
-        object-src 'none';
-        script-src 'self' 'unsafe-eval' https://cdn.syncfusion.com/blazor/; @* if you're using cdn script referencing add these two *@
-        style-src 'self' 'unsafe-inline' https://cdn.syncfusion.com/blazor/;
-        font-src 'self' data:;
-        upgrade-insecure-requests;">
+
 
     @* Pollyfil for blazor server to work on Internet Explorer *@
     <script src="https://github.com/Daddoon/Blazor.Polyfill/releases/download/3.0.8/blazor.polyfill.min.js"></script>
@@ -88,32 +79,9 @@
     </style>
 
 
-    @*  Javascript BoldReprts Reportviewer scripts  *@
-
-    <link href="https://cdn.syncfusion.com/5.4.20/bold-reports/material/bold.reports.all.min.css"  rel="stylesheet" />
-    <script src="https://cdn.syncfusion.com/js/assets/external/jquery-1.10.2.min.js" type="text/javascript"></script>
-
-    <!--Used to render the gauge item. Add this script only if your report contains the gauge report item. -->
-    <script src="https://cdn.boldreports.com/5.4.20/scripts/common/ej2-base.min.js"></script>
-    <script src="https://cdn.boldreports.com/5.4.20/scripts/common/ej2-data.min.js"></script>
-    <script src="https://cdn.boldreports.com/5.4.20/scripts/common/ej2-pdf-export.min.js"></script>
-    <script src="https://cdn.boldreports.com/5.4.20/scripts/common/ej2-svg-base.min.js"></script>
-    <script src="https://cdn.syncfusion.com/5.4.20/bold-reports/data-visualization/ej2-lineargauge.min.js"></script>
-    <script src="https://cdn.syncfusion.com/5.4.20/bold-reports/data-visualization/ej2-circulargauge.min.js"></script>
-
-    <!--Used to render the map item. Add this script only if your report contains the map report item.-->
-    <script src="https://cdn.syncfusion.com/5.4.20/bold-reports/data-visualization/ej2-maps.min.js"></script>
-
-    <!-- Report Viewer component script-->
-    <script src="https://cdn.syncfusion.com/5.4.20/bold-reports/common/bold.reports.common.min.js"></script>
-    <script src="https://cdn.syncfusion.com/5.4.20/bold-reports/common/bold.reports.widgets.min.js"></script>
-    <script src="https://cdn.syncfusion.com/5.4.20/bold-reports/data-visualization/ej.chart.min.js"></script>
-    <script src="https://cdn.syncfusion.com/5.4.20/bold-reports/bold.report-viewer.min.js"></script>
-
-   @* Javascript BoldReprts Reportviewer scripts *@
 
 
-   @* Javascript BoldReprtsTWO scripts *@
+
     <link href="https://cdn.boldreports.com/2.2.28/content/material/bold.reports.all.min.css" rel="stylesheet" />
     <script src="https://cdn.boldreports.com/external/jquery-1.10.2.min.js" type="text/javascript"></script>
     <script src="https://cdn.boldreports.com/2.2.28/scripts/common/bold.reports.common.min.js"></script>
@@ -133,8 +101,8 @@
     <script src="https://cdn.boldreports.com/2.2.28/scripts/bold.report-viewer.min.js"></script>
 
     <!-- Blazor interop file -->
-    <script src="~/scripts/boldreports-interop.js"></script>
-   @* Javascript BoldReprtsTWO scripts *@
+    <script src="/boldreports-interop.js"></script>
+   
 
 
 
@@ -186,9 +154,6 @@
         cdnStyleTest();
     </script> *@
 
-
-@* Javascript Boldreports Function   *@
-
     <script>
     function RenderReportViewer (reportPathInfo, elementID) {
     $("#"+ elementID).boldReportViewer({
@@ -198,6 +163,19 @@
     };
     </script>
 
+@*     <script>
+
+        // Interop file to render the Bold Report Viewer component with properties.
+        window.BoldReports = {
+            RenderViewer: function (elementID, reportViewerOptions) {
+                $("#" + elementID).boldReportViewer({
+                    reportPath: reportViewerOptions.reportName,
+                    reportServiceUrl: reportViewerOptions.serviceURL
+                });
+            }
+        }
+
+    </script> *@
 
 
 </body>
