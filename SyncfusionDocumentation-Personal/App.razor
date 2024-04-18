@@ -1,27 +1,13 @@
-﻿@page "/reporting"
-@using Microsoft.JSInterop
-@using Microsoft.AspNetCore.Components
-@inject IJSRuntime JSRuntime
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
 
-<div id="reportViewerControl" style="width: 100%;height:800px" />
-
-@code {
-
-    private string reportPathInput = "Report1";
-
-
-    // You have to call this method based on your need. It can called while loading the page or after selection the report.
-    public async void RenderReport()
-    {
-        await JSRuntime.InvokeVoidAsync("RenderReportViewer", reportPathInput, "reportViewerControl");
-    }
-
-    /// https://docs.microsoft.com/en-us/aspnet/core/blazor-reporting/components?view=aspnetcore-3.0
-    /// https://github.com/aspnet/AspNetCore.Docs/tree/master/aspnetcore/blazor-reporting/common/samples/3.x/BlazorSample
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        // If you want to load in intialization you can make use of this.
-        //RenderReport();
-    }
-}

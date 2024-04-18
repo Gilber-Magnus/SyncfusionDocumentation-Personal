@@ -30,30 +30,6 @@
         font-src 'self' data:;
         upgrade-insecure-requests;">
 
-@* scripts to use ReportViewer by boldreports *@
-
-<link href="https://cdn.syncfusion.com/5.4.20/bold-reports/material/bold.reports.all.min.css"  rel="stylesheet" />
-<script src="https://cdn.syncfusion.com/js/assets/external/jquery-1.10.2.min.js" type="text/javascript"></script>
-
-<!--Used to render the gauge item. Add this script only if your report contains the gauge report item. -->
-<script src="https://cdn.boldreports.com/5.4.20/scripts/common/ej2-base.min.js"></script>
-<script src="https://cdn.boldreports.com/5.4.20/scripts/common/ej2-data.min.js"></script>
-<script src="https://cdn.boldreports.com/5.4.20/scripts/common/ej2-pdf-export.min.js"></script>
-<script src="https://cdn.boldreports.com/5.4.20/scripts/common/ej2-svg-base.min.js"></script>
-<script src="https://cdn.syncfusion.com/5.4.20/bold-reports/data-visualization/ej2-lineargauge.min.js"></script>
-<script src="https://cdn.syncfusion.com/5.4.20/bold-reports/data-visualization/ej2-circulargauge.min.js"></script>
-
-<!--Used to render the map item. Add this script only if your report contains the map report item.-->
-<script src="https://cdn.syncfusion.com/5.4.20/bold-reports/data-visualization/ej2-maps.min.js"></script>
-
-<!-- Report Viewer component script-->
-<script src="https://cdn.syncfusion.com/5.4.20/bold-reports/common/bold.reports.common.min.js"></script>
-<script src="https://cdn.syncfusion.com/5.4.20/bold-reports/common/bold.reports.widgets.min.js"></script>
-<script src="https://cdn.syncfusion.com/5.4.20/bold-reports/data-visualization/ej.chart.min.js"></script>
-<script src="https://cdn.syncfusion.com/5.4.20/bold-reports/bold.report-viewer.min.js"></script>
-
-@* scripts to use ReportViewer by boldreports *@
-
     @* Pollyfil for blazor server to work on Internet Explorer *@
     <script src="https://github.com/Daddoon/Blazor.Polyfill/releases/download/3.0.8/blazor.polyfill.min.js"></script>
 
@@ -156,19 +132,6 @@
         }
         cdnStyleTest();
     </script> *@
-
-   @*  method to add Javascript ReportViewer *@
-
-    <script>
-        function RenderReportViewer(reportPathInfo, elementID) {
-            $("#" + elementID).boldReportViewer({
-                reportServiceUrl: '/api/ReportApi',
-                reportPath: reportPathInfo
-            });
-        };
-    </script>
-
-   @*  method to add Javascript ReportViewer *@
 
 </body>
 </html>
