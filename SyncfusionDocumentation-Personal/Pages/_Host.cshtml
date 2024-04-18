@@ -19,16 +19,7 @@
     <script src="_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js" type="text/javascript"></script>
 
     @* Content Security Policy *@
-    <meta http-equiv="Content-Security-Policy"
-          content="base-uri 'self';
-        default-src 'self';
-        connect-src 'self' https: wss:;
-        img-src data: https:;
-        object-src 'none';
-        script-src 'self' 'unsafe-eval' https://cdn.syncfusion.com/blazor/; @* if you're using cdn script referencing add these two *@
-        style-src 'self' 'unsafe-inline' https://cdn.syncfusion.com/blazor/;
-        font-src 'self' data:;
-        upgrade-insecure-requests;">
+
 
     @* Pollyfil for blazor server to work on Internet Explorer *@
     <script src="https://github.com/Daddoon/Blazor.Polyfill/releases/download/3.0.8/blazor.polyfill.min.js"></script>
@@ -86,6 +77,36 @@
             font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif !important;
         }
     </style>
+
+
+
+
+
+    <link href="https://cdn.boldreports.com/2.2.28/content/material/bold.reports.all.min.css" rel="stylesheet" />
+    <script src="https://cdn.boldreports.com/external/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.boldreports.com/2.2.28/scripts/common/bold.reports.common.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.2.28/scripts/common/bold.reports.widgets.min.js"></script>
+
+    <!--Used to render the chart item. Add this script only if your report contains the chart report item.-->
+    <script src="https://cdn.boldreports.com/2.2.28/scripts/data-visualization/ej.chart.min.js"></script>
+
+    <!--Used to render the gauge item. Add this script only if your report contains the gauge report item. -->
+    <script src="https://cdn.boldreports.com/2.2.28/scripts/data-visualization/ej.lineargauge.min.js"></script>
+    <script src="https://cdn.boldreports.com/2.2.28/scripts/data-visualization/ej.circulargauge.min.js"></script>
+
+    <!--Used to render the map item. Add this script only if your report contains the map report item.-->
+    <script src="https://cdn.boldreports.com/2.2.28/scripts/data-visualization/ej.map.min.js"></script>
+
+    <!-- Report Viewer component script-->
+    <script src="https://cdn.boldreports.com/2.2.28/scripts/bold.report-viewer.min.js"></script>
+
+    <!-- Blazor interop file -->
+    <script src="/boldreports-interop.js"></script>
+   
+
+
+
+
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 
 </head>
@@ -132,6 +153,30 @@
         }
         cdnStyleTest();
     </script> *@
+
+    <script>
+    function RenderReportViewer (reportPathInfo, elementID) {
+    $("#"+ elementID).boldReportViewer({
+    reportServiceUrl: '/api/ReportApi',
+    reportPath: reportPathInfo
+    });
+    };
+    </script>
+
+@*     <script>
+
+        // Interop file to render the Bold Report Viewer component with properties.
+        window.BoldReports = {
+            RenderViewer: function (elementID, reportViewerOptions) {
+                $("#" + elementID).boldReportViewer({
+                    reportPath: reportViewerOptions.reportName,
+                    reportServiceUrl: reportViewerOptions.serviceURL
+                });
+            }
+        }
+
+    </script> *@
+
 
 </body>
 </html>
