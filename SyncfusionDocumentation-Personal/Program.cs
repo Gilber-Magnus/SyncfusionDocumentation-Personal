@@ -58,7 +58,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-//dynamically setting the culture
 app.MapControllers();
 
 app.MapDefaultControllerRoute();
