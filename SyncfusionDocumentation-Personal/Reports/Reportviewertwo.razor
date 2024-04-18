@@ -1,0 +1,27 @@
+﻿@page "/reportviewertwo"
+
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
+@inject IJSRuntime JSRuntime
+@using BlazorReportingTools.Data;
+
+
+@code {
+    // ReportViewer options
+    BoldReportViewerOptions viewerOptions = new BoldReprtViewerOptions();
+
+    // Used to render the Bold Report Viewer component in Blazor page.
+    public async void RenderReportViewer()
+    {
+        viewerOptions.ReportName = "sales-order-detail";
+        viewertOptions.ServiceURL = "/api/BoldReportsAPI";
+        await JSRuntime.InvokeVoidAsync("BoldReports.RenderViewer", "report-viewer", viewerOptions);
+    }
+
+    //Initial rendering of Bold Report Viewert
+    protected override vodi OnAfterRender(bool firstRender)
+    {
+        RenderReportViewer();
+    }
+}
+

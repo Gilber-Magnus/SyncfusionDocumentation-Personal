@@ -22,8 +22,8 @@ builder.Services.AddDbContext<OrderDetailsDbContext>(option =>
 builder.Services.AddScoped<Order>();
 //Register the Syncfusion locale service to localize Syncfusion Blazor components.
 builder.Services.AddSingleton(typeof(ISyncfusionStringLocalizer), typeof(SyncfusionLocalizer));
-//dynamically setting the culture
 builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson();
 
 
 
