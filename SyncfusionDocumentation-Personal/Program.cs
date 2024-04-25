@@ -42,7 +42,7 @@ app.UseRequestLocalization(localizationOptions);
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzIyOTM3MEAzMjM1MmUzMDJlMzBlT2FhK0FNc2xDRVJCSm04ZW5SQTl5MmQvckxBdUhJQTZPUUJCOXFzdjVJPQ==");
 
 //Register Bold license
-Bold.Licensing.BoldLicenseProvider.RegisterLicense("YOUR LICENSE TOKEN HERE");
+Bold.Licensing.BoldLicenseProvider.RegisterLicense("X9bgtMUShaeJZ/e1MjejBJ7goo9JisMzq4Xk4Cqk2AA=");
 
 //statically setting the culture
 //app.UseRequestLocalization("fr-FR");
