@@ -12,7 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+Syncfusion.Blazor.SyncfusionBlazor.AddSyncfusionBlazor(builder.Services);
 builder.Services.AddServerSideBlazor();
+builder.Services.AddSingleton<DataGridScaffoldService>();
 builder.Services.AddSingleton<WeatherForecastService>();
 //enable overall Right-To-Left while registering syncfusion
 //options => { options.EnableRtl = true; }

@@ -1,0 +1,37 @@
+﻿@page "/DataGridSc"
+@using SyncfusionDocumentation_Personal.Data;
+@using Syncfusion.Blazor.Data;
+@using Syncfusion.Blazor;
+@using System.Collections;
+@using Syncfusion.Blazor.Grids;
+@using SyncfusionDocumentation_Personal.Data
+@inject DataGridScaffoldService data;
+
+
+<SfGrid @ref="@Grid" TValue="Order" ID="Grid" DataSource="GridData"  Height="315">
+ 
+  <GridColumns>
+	<GridColumn Field="OrderId"  HeaderText="OrderId"></GridColumn>
+	<GridColumn Field="CustomerId"  HeaderText="CustomerId" Type="ColumnType.String"></GridColumn>
+	<GridColumn Field="Freight"  HeaderText="Freight" Type="ColumnType.Number"></GridColumn>
+	<GridColumn Field="OrderDate"  HeaderText="OrderDate" Type="ColumnType.DateTime"></GridColumn>
+  </GridColumns>
+</SfGrid>
+
+@code{
+ 	 public  List<Order>? GridData { get; set; }
+							protected override void OnInitialized()
+				{
+				GridData = data.GetAllOrder().ToList();
+				}
+			      
+
+			SfGrid<Order>? Grid;
+
+	
+    
+}
+ 
+
+
+
