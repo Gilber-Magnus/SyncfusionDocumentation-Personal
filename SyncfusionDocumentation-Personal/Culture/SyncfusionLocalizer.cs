@@ -1,24 +1,22 @@
-﻿namespace SyncfusionDocumentation_Personal.Culture
+﻿using Syncfusion.Blazor;
+namespace SyncfusionDocumentation_Personal.Culture;
+public class SyncfusionLocalizer : ISyncfusionStringLocalizer
 {
-
-    public class SyncfusionLocalizer : Syncfusion.Blazor.ISyncfusionStringLocalizer
+    public string? GetText(string key)
     {
-        public string GetText(string key)
-        {
-            return ResourceManager.GetString(key);
-        }
+        return this.ResourceManager.GetString(key);
+    }
 
-        public System.Resources.ResourceManager ResourceManager
+    public System.Resources.ResourceManager ResourceManager
+    {
+        get
         {
-            get
-            {
-                // Replace the ApplicationNamespace with your application name.
-                return Resources.SfResources.ResourceManager;
+            // Replace the ApplicationNamespace with your application name.
+            return Resources.SfResources.ResourceManager;
 
-                //For .Net Maui Blazor App
-                // Replace the ApplicationNamespace with your application name.
-                //return ApplicationNamespace.LocalizationResources.SfResources.ResourceManager;
-            }
+            //For .Net Maui Blazor App
+            // Replace the ApplicationNamespace with your application name.
+            //return ApplicationNamespace.LocalizationResources.SfResources.ResourceManager;
         }
     }
 }
